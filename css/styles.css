@@ -1761,8 +1761,8 @@ Waypoints
 }
 
 #app .item-wrap{
-    display: flex;
     padding: 30px 0 50px 0;
+    overflow: hidden;
 }
 #app .item{
     width: 280px;
@@ -1777,6 +1777,8 @@ Waypoints
     position: relative;
     color: #fff;
     border-radius: 10px;
+    float: left;
+    margin-bottom: 40px;
 }
 
 #app .item .title{
