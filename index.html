@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+
+    <script src="js/modernizr.custom.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery.fancybox.css" rel="stylesheet">
+    <link href="css/flickity.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/queries.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header id="main">
+    <section class="hero">
+        <div class="container">
+            <div class="row nav-wrapper">
+                <div class="col-md-6 col-sm-6 col-xs-6 text-left" style="font-size: 24px;font-weight: bold;">
+                    SCHOOL TRAVEL
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-left job-menu" style="font-size: 16px">
+                    <div class="item">
+                        <a href="javascript:void(0)" class="animated fadeInUp">首页</a>
+                    </div>
+                    <div class="item">
+                        <a href="#app" class="animated fadeInUp">查看活动</a>
+                    </div>
+                    <div class="item">
+                        <a href="#about" class="animated fadeInUp">关于我们</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row hero-content">
+                <div class="col-md-12 text-center" style="margin-top: 30%">
+                    <!--<div class="row">
+                        <input type="text" name="name" id="search_value" required="required" class="form wp2"
+                               placeholder="请填写书名(例如:三国)">
+                    </div>
+                    <a href="javascript:void(0)" id="search" class="read-btn animated fadeInUp">查询</a>-->
+                    <h1 id="noExtension" style="display: none;margin-top: -93px;">请安装
+                        <a target="_blank"
+                           href="https://github.com/ChengOrangeJu/WebExtensionWallet" style="color: #000">WebExtensionWallet</a> 再使用</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+<section class="book-record" id="app">
+    <div class="container">
+        <div class="title-section text-center">
+            <h2 style="margin-top: 100px;color:#2e5246">活动列表</h2>
+        </div>
+        <div class="item-wrap">
+            <div class="item" v-for="l in list">
+                <div class="title" v-html="l.title"></div>
+                <div class="content" v-html="l.value"></div>
+                <div class="date">
+                    活动时间：{{l.date}}
+                </div>
+                <div class="phone">
+                    联系人：{{l.phone}}
+                </div>
+               <!-- <div class="opt">
+                    <div class="opt-btn">
+                        我要参与
+                    </div>
+                </div>-->
+            </div>
+        </div>
+
+        <div class="relative fullwidth col-xs-12" style="margin-bottom: 50px;">
+            <button name="submit" class="form-btn semibold new-btn">我要发布</button>
+        </div>
+
+    </div>
+</section>
+<section id="set" class="container page-section" style="display: none;">
+    <div class="inner contact wp2 delay-05s">
+        <div class="title-section text-center">
+            <h2 style="color:#2e5246">发布活动</h2>
+        </div>
+        <div class="contact-form">
+            <div class="col-xs-12 animated fadeInLeft visible" data-animation="fadeInLeft" data-animation-delay="300">
+                <div class="col-xs-6">
+                    <input type="text" id="name" class="form" placeholder="活动名称">
+                </div>
+                <div class="col-xs-6">
+                    <input type="text" id="content" class="form" placeholder="活动内容">
+                </div>
+                <div class="col-xs-6">
+                    <input type="tel" id="phone" class="form" placeholder="联系人手机号" maxlength="11">
+                </div>
+                <div class="col-xs-6">
+                    <input type="date" id="date" class="form" placeholder="活动时间" style="line-height: normal">
+                </div>
+                <div class="col-xs-12">
+                    <input type="text" id="remark" class="form" placeholder="备注">
+                </div>
+
+            </div>
+            <div class="relative fullwidth col-xs-12">
+                <button id="push" name="submit" class="form-btn semibold new-btn">提交</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</section>
+<footer id="about" class="footer">
+    <section id="site-socials" class="no-padding white-bg">
+        <div class="site-socials inner no-padding">
+
+            <!-- Adress, Mail -->
+            <div class="address socials animated fadeInRight visible" data-animation="fadeInRight"
+                 data-animation-delay="500">
+                <!-- Phone Number, Mail -->
+                <p style="color: #333">Copyright &copy; 2018.基于新一代区块链公链<a href="https://nebulas.io/" target="_blank">NAS</a>&nbsp;&nbsp;&nbsp;
+                </p>
+            </div>
+            <!-- End Adress, Mail -->
+        </div>
+        <!-- End Inner -->
+    </section>
+</footer>
+<link rel="stylesheet" type="text/css" href="css/component.css"/>
+<script src=js/nebPay.js></script>
+<script src="js/toucheffects.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var NebPay = require("nebpay"); //https://github.com/nebulasio/nebPay
+    var nebPay = new NebPay();
+
+    $(function () {
+        //检查扩展是否已安装
+        //如果安装了扩展，var“webExtensionWallet”将被注入到web页面中1
+        if (typeof(webExtensionWallet) === "undefined") {
+            //alert ("扩展钱包未安装，请先安装.")
+            $("#noExtension").show();
+        }
+
+        $('#add').on('click', function () {
+            $('#inp').slideToggle();
+        });
+    })
+
+    var dappAddress = "n1yzHj3Vim3po3FuR4MqoZUmf3RZ9Z7qgf6";
+    var bLen = 0;
+    setInterval(function () {
+        getQuestion(0);
+    }, 15000);
+    getQuestion(0);
+
+    // 初始化
+    function getQuestion(page) {
+        var to = dappAddress;
+        var value = "0";
+        var callFunction = "forEach";
+        var callArgs = "[100]";
+        nebPay.simulateCall(to, value, callFunction, callArgs, {
+            listener: cbSearch
+        });
+    }
+
+    //return of search,
+    function cbSearch(resp) {
+        if (!resp.result) return;
+        var result = eval(JSON.parse(resp.result));
+
+        var qList = [];
+        for (var i = 0; i < result.length; i++) {
+            qList.push(result[i]);
+        }
+        if (result !== 'null') {
+            Vue.set(app, 'list', qList)
+        }
+    }
+
+    $('#push').on('click',function(){
+        var name = $('#name').val();
+        var content = $('#content').val();
+        var phone = $('#phone').val();
+        var date = $('#date').val();
+        if (name == '') {
+            layer.msg('活动名称不能为空');
+            return;
+        } else if (content == '') {
+            layer.msg('活动内容不能为空');
+            return;
+        } else if (phone == '') {
+            layer.msg('联系人手机号不能为空');
+            return;
+        } else if (date == '') {
+            layer.msg('活动时间不能为空');
+            return;
+        }
+        var to = dappAddress;
+        var value = "0";
+        var callFunction = "save"
+        var callArgs = [];
+        callArgs.push((bLen + 1).toString());
+        callArgs.push(name);
+        callArgs.push(content);
+        callArgs.push(new Date().format("yyyy-MM-dd"));
+        callArgs.push(phone);
+        nebPay.call(to, value, callFunction, JSON.stringify(callArgs), {
+            listener: cbPush
+        });
+    });
+
+
+    function cbPush(resp) {
+        console.log("response of push: " + resp);
+        $("#questionInp").val('')
+    }
+
+
+    function getLen() {
+        var to = dappAddress;
+        var value = "0";
+        var callFunction = "len";
+        nebPay.simulateCall(to, value, callFunction, '', {
+            listener: cbLen
+        });
+    }
+
+    function cbLen(resp) {
+        bLen = parseInt(resp.result || 0);
+    }
+
+    getLen();
+    var app = new Vue({
+        el: '#app',
+        data: {
+            list: []
+        }
+    });
+
+    $('.add-btn').on('click',function(){
+        $('#set').show();
+    })
+
+    Date.prototype.format = function (format) {
+        var args = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+            "q+": Math.floor((this.getMonth() + 3) / 3),  //quarter
+            "S": this.getMilliseconds()
+        };
+        if (/(y+)/.test(format))
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var i in args) {
+            var n = args[i];
+            if (new RegExp("(" + i + ")").test(format))
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+        }
+        return format;
+    };
+</script>
+</body>
+
+</html>
